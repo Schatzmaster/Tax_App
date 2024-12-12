@@ -3,30 +3,30 @@ import os
 
 # -----------------NUTRI API-----------------
 #
-# NUTRI_KEY = "175763ce993f2441ef17d1d380b44246"
-# NUTRI_ID = "04fd0f4f"
-# NUTRI_ENDPOINT = "https://trackapi.nutritionix.com/v2/natural/exercise"
-# query = "running"
-# WEIGHT = 63
-# HEIGHT = 178
-# AGE = 33
-#
-# nutri_header = {
-#     "x-app-id": NUTRI_ID,
-#     "x-app-key": NUTRI_KEY,
-# }
-#
-# nutri_params = {
-#     "query": query,
-#     "weight_kg": WEIGHT,
-#     "height_cm": HEIGHT,
-#     "age": AGE,
-# }
-#
-# nutri_response = requests.post(url=NUTRI_ENDPOINT, json=nutri_params, headers=nutri_header)
-# nutri_response.raise_for_status()
-# data = nutri_response.json()
-# print(nutri_response, data)
+NUTRI_KEY = os.environ["NUTRI_KEY"]
+NUTRI_ID = os.environ["NUTRI_ID"]
+NUTRI_ENDPOINT = "https://trackapi.nutritionix.com/v2/natural/exercise"
+query = "running"
+WEIGHT = 63
+HEIGHT = 178
+AGE = 33
+
+nutri_header = {
+    "x-app-id": NUTRI_ID,
+    "x-app-key": NUTRI_KEY,
+}
+
+nutri_params = {
+    "query": query,
+    "weight_kg": WEIGHT,
+    "height_cm": HEIGHT,
+    "age": AGE,
+}
+
+nutri_response = requests.post(url=NUTRI_ENDPOINT, json=nutri_params, headers=nutri_header)
+nutri_response.raise_for_status()
+data = nutri_response.json()
+print(nutri_response, data)
 
 
 # -----------------SHEETY API-----------------
